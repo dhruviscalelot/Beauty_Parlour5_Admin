@@ -4,7 +4,7 @@ import toast from 'react-hot-toast'
 import { useLocation, Link, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import * as Yup from "yup";
-import { PRICE_VALIDATION, TITLE_VALIDATION} from '../../common/ErrorMessageCommom';
+import { PRICE_VALIDATION, TITLE_VALIDATION,PLAN_NAME} from '../../common/ErrorMessageCommom';
 import { packagesData } from '../../data/packages';
 
 const AddEditMembership = () => {
@@ -28,6 +28,7 @@ const AddEditMembership = () => {
     const initialValues = {
         service_id: serviceData?.id || "",
         title: serviceData?.title || "",
+        planName : serviceData?.planName || "",
         price: serviceData?.price || "",
         
         serviceDetails: serviceData?.packageDetails || [
@@ -38,6 +39,7 @@ const AddEditMembership = () => {
     const HandleValidation = Yup.object().shape({
         title: Yup.string().required(TITLE_VALIDATION),
         price: Yup.string().required(PRICE_VALIDATION),
+        planName: Yup.string().required(PLAN_NAME),
        
         serviceDetails: Yup.array().of(
             Yup.object().shape({
@@ -95,6 +97,13 @@ const AddEditMembership = () => {
                                     <label className="label">Price <span className='text-red '>*</span></label>
                                     <Field type="text" className="input" name="price" placeholder="Enter Price" />
                                     <ErrorMessage name="price" component="span" className="error" />
+                                </div>
+
+
+                                <div className="w-full md:w-1/3 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
+                                    <label className="label">Paln Name <span className='text-red '>*</span></label>
+                                    <Field type="text" className="input" name="planName" placeholder="Enter Plan Name" />
+                                    <ErrorMessage name="planName" component="span" className="error" />
                                 </div>
 
 

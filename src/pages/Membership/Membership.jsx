@@ -16,6 +16,7 @@ const Membership = () => {
 
     const columns = [
         { key: "title", label: "Title", renderCell: (key, row) => row?.title || "-" },
+          { key: "planName", label: "Plan Name", renderCell: (key, row) => row?.planName || "-" },
         { key: "price", label: "Price", renderCell: (key, row) => row?.price || "-" },
         {
             key: "packageDetails",

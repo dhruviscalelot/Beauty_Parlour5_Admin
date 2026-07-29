@@ -2,7 +2,8 @@
 export const membershipData = [
     {
         id: 1,
-        title: "Silver",
+        title: "For everyday radiance",
+        planName: "Silver",
         price: "₹19,999 / yr",
         packageDetails: [
             {
@@ -28,7 +29,8 @@ export const membershipData = [
     },
     {
         id: 2,
-        title: "Gold",
+        title: "Our most-loved plan",
+        planName: "Gold",
         price: "₹4,999 / yr",
         packageDetails: [
             {
@@ -51,7 +53,8 @@ export const membershipData = [
     },
     {
         id: 3,
-        title: "Platinum",
+        title: "The complete luxury",
+        planName: "Platinum",
         price: "₹3,499 / yr",
         packageDetails: [
             {
@@ -77,5 +80,5 @@ export const membershipData = [
             },
         ],
     },
-   
+
 ];

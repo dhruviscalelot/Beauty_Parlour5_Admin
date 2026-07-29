@@ -41,7 +41,7 @@ const AddEditTestimonials = () => {
         rating: Yup.mixed().required(RATING_VALIDATION),
         quote: Yup.string().required(QUOTE_VALIDATION),
         clienttype: Yup.string().required(CLIENT_TYPE_VALIDATION),
-        image: Yup.mixed().required(IMAGE_VALIDATION),
+        // image: Yup.mixed().required(IMAGE_VALIDATION),
     })
 
     const handleImageUpload = (e, setFieldValue) => {

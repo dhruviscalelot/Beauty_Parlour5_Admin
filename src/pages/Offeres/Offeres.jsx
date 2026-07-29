@@ -21,9 +21,10 @@ const Offeres = () => {
 
     const columns = [
 
-        { key: "offertitle", label: "Offer Title", renderCell: (key, row) => row?.offertitle || "-" },
+       
         { key: "title", label: "Title", renderCell: (key, row) => row?.title || "-" },
-        { key: "description", label: "Description", renderCell: (key, row) => row?.description || "-" },
+         { key: "offertitle", label: "Offer Title", renderCell: (key, row) => row?.offertitle || "-" },
+        { key: "date", label: "Date", renderCell: (key, row) => row?.date || "-" },
 
 
         {

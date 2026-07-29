@@ -20,3 +20,4 @@ export const HOURS = "Hours is Required";
 export const SERVICE_VALIDATION = "Service is Required";
 export const DURATION_VALIDATION = "Duration is Required";
 export const RECOMMENDEDFOR_VALIDATION = "Recommended For is Required";
+export const PLAN_NAME = "Plan Name is Required";

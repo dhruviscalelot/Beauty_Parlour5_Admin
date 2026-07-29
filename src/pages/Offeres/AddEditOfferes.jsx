@@ -4,9 +4,11 @@ import toast from 'react-hot-toast'
 import { useLocation, Link, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import * as Yup from "yup";
-import { DESCRIPTION_VALIDATION, TITLE_VALIDATION, SUBTITLE_VALIDATION } from '../../common/ErrorMessageCommom';
+import { DATE_VALIDATION, TITLE_VALIDATION, SUBTITLE_VALIDATION } from '../../common/ErrorMessageCommom';
 import { ImagePlus } from "lucide-react";
 import { offersData } from '../../data/offeres';
+import { Calendar } from "primereact/calendar";
+
 
 const AddEditOfferes = () => {
   const dispatch = useDispatch()
@@ -23,14 +25,14 @@ const AddEditOfferes = () => {
     service_id: offerssData?.id || "",
     offertitle: offerssData?.offertitle || "",
     title: offerssData?.title || "",
-    description: offerssData?.description || "",
+    date: offerssData?.date || "",
   }
 
 
   const HandleValidation = Yup.object().shape({
     offertitle: Yup.string().required(SUBTITLE_VALIDATION),
     title: Yup.string().required(TITLE_VALIDATION),
-    description: Yup.string().required(DESCRIPTION_VALIDATION),
+    date: Yup.string().required(DATE_VALIDATION),
   })
 
 
@@ -88,19 +90,26 @@ const AddEditOfferes = () => {
 
 
 
-                <div className="w-full p-1.5 xl:p-2.5 2xl:p-3.5 relative">
-                  <label className="label">Description <span className='text-red '>*</span></label>
-                  <Field as="textarea" name="description" className="input h-[130px] py-3" placeholder="Enter Customer Description" />
-                  <ErrorMessage name="description" component="span" className="error" />
+                <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
+                  <label className="label">Offer Date <span className='text-red '>*</span></label>
+                  <Calendar
+                    id="pickup_date"
+                    name="date"
+                    value={values.date}
+                    onChange={(e) => setFieldValue("pickup_date", e.value)}
+                    minDate={new Date()}
+                    dateFormat="dd/mm/yy"
+                    placeholder="Select Date"
+                    showIcon
+                    iconPos="input"
+                    showButtonBar
+                    className="w-full"
+                    inputClassName="input w-full"
+                  />
+                  <ErrorMessage name="date" component="span" className="error" />
                 </div>
 
-
-
               </div>
-
-
-
-
 
             </Form>
           }
