@@ -21,31 +21,12 @@ export default {
         '2xl': '1536px',
         // => @media (min-width: 1536px) { ... }
       },
-      // colors: {
-      //   primary: '#B57671',
-      //   'primary-dark': '#E6D6D2',
-      //   'primary-light': '#FEF2EF',
-      //   accent: '#FEF7F0',
-      //   l4: '#FFFFFF',
-      //   l3: '#FEF2EF',
-      //   l2: '#E6D6D2',
-      //   g1: '#4A3933',
-      //   g2: '#5F4D47',
-      //   g3: '#75635C',
-      //   g7: '#8B8377',
-      //   red: '#FE5969',
-      // },
        colors: {
-        primary: '#D17273',
-        'primary-dark': '#D6917A',
-        'primary-light': '#FEFAF7',
-        accent: '#FDF1EF',
-        l4: '#FFFFFF',
-        l3: '#ffe4e3',
-        l2: '#fbdfeb',
-        g1: '#4A3933',
-        g2: '#5F4D47',
-        g3: '#75635C',
+        primary: '#362320',
+        l4: '#FEFAF8',
+        l3: '#F6EBDA',
+        l2: '#ffe4e3',
+        g1: '#8B8377',
         g7: '#8B8377',
         red: '#FE5969',
       },
@@ -88,20 +69,13 @@ export default {
 
 
 
+// #FBF3ED
 
-// #FEFAF7
+// #B44957
 
-// --gradient-rose: linear-gradient(135deg, oklch(66% .12 20), oklch(72% .09 40));
+// #FDF0EE
 
-// --gradient-hero: linear-gradient(135deg, oklch(97% .02 40) 0%, oklch(94% .03 20) 55%, oklch(93% .035 350) 100%);
-
-
-
-// #FDF1EF
+// #362320
 
 
-
-// Start Color: #D17273 (Vibrant rose pink)End Color: #D6917A (Warm coral apricot)
-
-
-// #fff1eb (From oklch(97% .02 40))#ffe4e3 (From oklch(94% .03 20))#fbdfeb (From oklch(93% .035 350))
+// #F6EBDA

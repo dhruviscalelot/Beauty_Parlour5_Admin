@@ -52,7 +52,7 @@ const Login = () => {
   return (
     <div className="w-full min-h-screen flex relative py-6 lg:py-8 2xl:py-10 px-5 2xl:px-6 font-Lexend bg-l3 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,#fff1eb_0%,#ffe4e3_30%,#fbdfeb_60%,#D17273_100%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#FEFAF8_0%,#F6EBDA_30%,#FFE4E3_60%,#362320_100%)]"></div>
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
@@ -61,10 +61,10 @@ const Login = () => {
           <div className="w-full lg:w-1/2 flex flex-col justify-center p-8 md:p-10 2xl:p-12">
             <div className="mb-8 text-left">
               <div className="w-16 h-16 md:w-20 md:h-20 mb-5 rounded-2xl bg-l3 border border-l2 shadow-[0_16px_35px_rgba(183,110,121,0.22)] flex items-center justify-center">
-                <span className="font-Prata text-30 md:text-36 text-primary leading-none">B</span>
+                <span className="font-Prata text-30 md:text-36 text-primary leading-none">L</span>
               </div>
               <h1 className="text-30 md:text-40 2xl:text-48 font-Prata text-g1 leading-tight mb-2">
-                Bloom & Grace
+                Luxe Salon & Spa
               </h1>
               <p className="text-g7 text-12 md:text-14 2xl:text-16 tracking-[0.18em] font-light uppercase">
                 Administration Portal
