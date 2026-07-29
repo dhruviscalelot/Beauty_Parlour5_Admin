@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+@tailwind base;
+
+body {
+  @apply font-Lexend;
+}
+
+@layer base {
+  body {
+    @apply m-0 bg-l4 text-g1;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+.input {
+  @apply w-full bg-l4 border border-l2 rounded-lg py-2 px-3.5 2xl:px-5 text-14 2xl:text-16 font-normal text-g1 block outline-none;
+}
+
+.label {
+  @apply text-12 md:text-14 text-g1 font-semibold block mb-1;
+}
+
+.btn_primary {
+  @apply w-full flex items-center justify-center space-x-1 whitespace-nowrap py-1.5 lg:py-2 px-3 lg:px-4 2xl:px-6 bg-primary border border-primary rounded-lg text-12 lg:text-14 2xl:text-16 font-semibold text-white hover:bg-white hover:border-primary hover:text-primary;
+}
+
+.btn_secondary {
+  @apply w-full whitespace-nowrap inline-block py-1.5 lg:py-2 px-3 lg:px-4 2xl:px-6 bg-white border border-primary rounded-lg text-12 lg:text-14 2xl:text-16 font-semibold text-primary hover:bg-primary hover:border-primary hover:text-white;
+}
+
+.excel_btn {
+  @apply w-full bg-white border border-l2 rounded-[10px] py-1.5 lg:py-2 px-3.5 2xl:px-5 text-14 2xl:text-16 font-medium text-g1 block outline-none;
+}
+
+.error {
+  @apply text-[10px] 2xl:text-12 absolute bottom-0 left-2.5 xl:left-3.5 2xl:left-5 bg-white text-red;
+}
+
+.main_shadow {
+  box-shadow: 0px 2px 16px 10px rgba(12, 26, 36, 0.05);
+}
+
+
+/* start sidebar and header class */
+.admin_layout {
+  @apply min-h-screen bg-l4 flex font-Lexend;
+}
+
+.sidebar_wrap {
+  @apply w-[260px] 2xl:w-[300px] min-h-screen bg-white border-r border-l2 flex flex-col fixed left-0 top-0 z-30 transition-all duration-300;
+}
+
+.sidebar_collapsed {
+  @apply lg:w-[86px] 2xl:w-[92px];
+}
+
+.sidebar_logo {
+  @apply px-5 2xl:px-6 py-5 2xl:py-6 border-b border-l2 flex items-center;
+}
+
+.sidebar_logo_icon {
+  @apply w-11 h-11 2xl:w-12 2xl:h-12 rounded-xl bg-l3 border border-l2 flex items-center justify-center shrink-0;
+}
+
+.sidebar_menu {
+  @apply flex-1 px-3.5 2xl:px-4 py-5 overflow-y-auto;
+}
+
+.sidebar_link {
+  @apply w-full flex items-center py-2.5 2xl:py-3 px-3.5 2xl:px-4 rounded-xl text-14 2xl:text-16 font-medium text-g7 hover:bg-l3 hover:text-primary;
+}
+
+.sidebar_link_active {
+  @apply bg-primary text-white hover:bg-primary hover:text-white;
+}
+
+.sidebar_icon {
+  @apply w-9 h-9 rounded-lg flex items-center justify-center mr-3 bg-l3 text-primary;
+}
+
+.sidebar_link_active .sidebar_icon {
+  @apply bg-white/20 text-white;
+}
+
+.layout_content {
+  @apply flex-1 min-h-screen ml-[260px] 2xl:ml-[300px] transition-all duration-300;
+}
+
+.layout_content_collapsed {
+  @apply lg:ml-[86px] 2xl:ml-[92px];
+}
+
+.sidebar_overlay {
+  @apply lg:hidden fixed inset-0 bg-black/40 z-20;
+}
+
+@media (max-width: 1023px) {
+  .sidebar_wrap {
+    @apply -translate-x-full transition-transform duration-300;
+  }
+
+  .sidebar_wrap.sidebar_open {
+    @apply translate-x-0;
+  }
+
+  .layout_content {
+    @apply ml-0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar_collapsed .sidebar_logo {
+    @apply px-4 justify-center;
+  }
+
+  .sidebar_collapsed .sidebar_logo_text,
+  .sidebar_collapsed .sidebar_text {
+    @apply hidden;
+  }
+
+  .sidebar_collapsed .sidebar_link {
+    @apply px-2 justify-center;
+  }
+
+  .sidebar_collapsed .sidebar_icon {
+    @apply mr-0;
+  }
+}
+
+/* end sidebar and header class */
+
+
+/* Table css start  */
+.custom_table table tr th {
+  @apply text-14 font-semibold text-g1 px-2 py-1.5 bg-l3 whitespace-nowrap border-r border-l2 text-left;
+}
+
+.custom_table table tr td {
+  @apply text-14 font-normal text-g7 px-2 py-1.5 whitespace-nowrap bg-white border-collapse border border-l3;
+}
+
+.custom_table table tr:nth-child(even) td {
+  @apply bg-l4;
+}
+
+/* Table css end  */
+
+
+
+/* prime react date start */
+.p-calendar {
+  width: 100%;
+  position: relative;
+}
+
+.p-calendar .p-inputtext {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.p-calendar .p-datepicker-trigger {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #4A3933;
+  width: auto;
+  height: auto;
+  padding: 0;
+  z-index: 2;
+}
+
+.p-calendar .p-datepicker-trigger:hover {
+  background: transparent;
+}
+
+.p-calendar .p-datepicker-trigger:focus {
+  box-shadow: none;
+}
+
+/* prime react date end */
+
+
+/* prime react input switch css start */
+
+/* ON Background */
+.custom-switch .p-inputswitch.p-highlight .p-inputswitch-slider {
+  background: #D17273 !important;
+}
+
+/* Circle when ON */
+.custom-switch.p-inputswitch-checked .p-inputswitch-slider:before {
+  background: #ffffff !important;
+}
+
+/* Remove focus shadow */
+.custom-switch.p-focus .p-inputswitch-slider {
+  box-shadow: none !important;
+}
+
+/* prime react input switch css end */
+
+@tailwind components;
+@tailwind utilities;

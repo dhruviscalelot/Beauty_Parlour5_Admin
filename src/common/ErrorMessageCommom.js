@@ -1,0 +1,22 @@
+export const EMAIL_VALIDATION = 'Email is required'
+export const PASSWORD_VALIDATION = 'Password is required'
+export const DESCRIPTION_VALIDATION = 'Description is Required';
+export const ICON_VALIDATION = 'Icon is Required';
+export const IMAGE_VALIDATION = 'Image is Required';
+export const TITLE_VALIDATION = 'Title is Required';
+
+export const NAME_VALIDATION = 'Name is Required';
+export const RATING_VALIDATION = 'Rating is Required';
+export const QUOTE_VALIDATION = 'Quote is Required';
+export const CLIENT_TYPE_VALIDATION = 'Client Type is Required';
+export const TAG_VALIDATION = 'Tag Name is Required';
+export const SUITABLETITLE_VALIDATION = 'Suitable Title is Required';
+export const YEAR_VALIDATION = 'Year is Required';
+export const CATEGOTY_VALIDATION = 'Category is Required';
+export const PRICE_VALIDATION = 'Price is Required';
+export const SUBTITLE_VALIDATION = "Sub Title is Required";
+export const DATE_VALIDATION = "Date is Required";
+export const HOURS = "Hours is Required";
+export const SERVICE_VALIDATION = "Service is Required";
+export const DURATION_VALIDATION = "Duration is Required";
+export const RECOMMENDEDFOR_VALIDATION = "Recommended For is Required";
