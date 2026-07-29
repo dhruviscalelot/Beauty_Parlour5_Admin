@@ -41,7 +41,7 @@ function Sidebar({ MainMenu = [] }) {
                         </span>
                     </div>
                     <div className="sidebar_logo_text ml-3">
-                        <h2 className="font-Prata text-16 2xl:text-20 text-g1 leading-tight">Luxe Salon & Spa</h2>
+                        <h2 className="font-Prata text-16 2xl:text-20 text-l3 leading-tight">Luxe Salon & Spa</h2>
                         {/* <p className="text-12 text-g7 uppercase tracking-[0.16em]">Admin Panel</p> */}
                     </div>
                 </div>

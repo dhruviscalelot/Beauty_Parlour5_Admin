@@ -60,7 +60,7 @@ body {
 }
 
 .sidebar_logo {
-  @apply px-5 2xl:px-6 py-5 2xl:py-6 border-b border-l2 flex items-center;
+  @apply px-5 2xl:px-6 py-5 2xl:py-6 border-b border-l2 flex items-center bg-primary;
 }
 
 .sidebar_logo_icon {
@@ -68,15 +68,15 @@ body {
 }
 
 .sidebar_menu {
-  @apply flex-1 px-3.5 2xl:px-4 py-5 overflow-y-auto;
+  @apply flex-1 px-3.5 2xl:px-4 py-5 overflow-y-auto bg-primary;
 }
 
 .sidebar_link {
-  @apply w-full flex items-center py-2.5 2xl:py-3 px-3.5 2xl:px-4 rounded-xl text-14 2xl:text-16 font-medium text-g7 hover:bg-l3 hover:text-primary;
+  @apply w-full flex items-center py-2.5 2xl:py-3 px-3.5 2xl:px-4 rounded-xl text-14 2xl:text-16 font-medium text-l3 hover:bg-primary hover:text-l3;
 }
 
 .sidebar_link_active {
-  @apply bg-primary text-white hover:bg-primary hover:text-white;
+  @apply bg-l3 text-primary;
 }
 
 .sidebar_icon {
@@ -84,7 +84,7 @@ body {
 }
 
 .sidebar_link_active .sidebar_icon {
-  @apply bg-white/20 text-white;
+  @apply bg-l3 text-primary;
 }
 
 .layout_content {
