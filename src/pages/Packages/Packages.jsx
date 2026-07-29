@@ -16,7 +16,7 @@ const Packages = () => {
   const columns = [
     { key: "title", label: "Title", renderCell: (key, row) => row?.title || "-" },
     { key: "price", label: "Price", renderCell: (key, row) => row?.price || "-" },
-    { key: "hours", label: "Hours", renderCell: (key, row) => row?.hours || "-" },
+    // { key: "hours", label: "Hours", renderCell: (key, row) => row?.hours || "-" },
     {
       key: "packageDetails",
       label: "Packages Details",

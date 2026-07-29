@@ -106,9 +106,8 @@ export const MainMenu = [
 export const galleryTag = [,
     { value: "Bridal", label: "Bridal" },
     { value: "Hair", label: "Hair" },
-    { value: "Facial", label: "Facial" },
+    { value: "Skin", label: "Facial" },
     { value: "Nails", label: "Nails" },
-    { value: "Salon Interior", label: "Salon Interior" },
     { value: "Spa", label: "Spa" },
     { value: "Mehendi", label: "Mehendi" },
 ]

@@ -5,7 +5,7 @@ export const ourExportsData = [
         quote:
             "Founder & Lead Beautician",
         year: "18 years",
-        clientType: "Bridal makeup, skin therapy",
+        clientType: "Founder · Master Stylist",
         image: "https://images.unsplash.com/photo-1745434159123-5b99b94206ca?auto=format&fit=crop&w=500&h=500&q=80",
     },
     {

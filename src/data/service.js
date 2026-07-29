@@ -13,7 +13,7 @@ export const servicesData = [
         service: "Haircut & Blow Dry",
         description: "Fresh shape, added volume · Everyday styling",
         duration: "30–45 min",
-        recommendedFor: "All hair types",
+        // recommendedFor: "All hair types",
         price: "500",
         status : "active"
     },
@@ -24,7 +24,7 @@ export const servicesData = [
         service: "Keratin Smoothening",
         description: "Fresh shape, added volume · Everyday styling",
         duration: "150 min",
-        recommendedFor: "All hair types",
+        // recommendedFor: "All hair types",
         price: "500",
           status : "Active"
     },
@@ -35,7 +35,7 @@ export const servicesData = [
         service: "Facial",
         description: "Fresh shape, added volume · Everyday styling",
         duration: "30–45 min",
-        recommendedFor: "All skin types",
+        // recommendedFor: "All skin types",
         price: "500",
           status : "Active"
     },
@@ -46,7 +46,7 @@ export const servicesData = [
         service: "Face Polish",
         description: "Fresh shape, added volume · Everyday styling",
         duration: "30–45 min",
-        recommendedFor: "All skin types",
+        // recommendedFor: "All skin types",
         price: "500",
           status : "Inactive"
     },
@@ -57,7 +57,7 @@ export const servicesData = [
         service: "Natural Party Makeup",
         description: "Fresh shape, added volume · Everyday styling",
         duration: "120 min",
-        recommendedFor: "All skin types",
+        // recommendedFor: "All skin types",
         price: "2500",
           status : "Active"
     },
@@ -68,7 +68,7 @@ export const servicesData = [
         service: "Bridal Makeup",
         description: "Fresh shape, added volume · Everyday styling",
         duration: "120 min",
-        recommendedFor: "All skin types",
+        // recommendedFor: "All skin types",
         price: "2500",
           status : "Inactive"
     },
@@ -79,7 +79,7 @@ export const servicesData = [
         service: "Classic Manicure",
         description: "Neat, nourished hands · Regular care",
         duration: "30 min",
-        recommendedFor: "All skin types",
+        // recommendedFor: "All skin types",
         price: "500",
     },
     {
@@ -89,7 +89,7 @@ export const servicesData = [
         service: "Nail Art",
         description: "Intricate designs · Express your creativity",
         duration: "30 min",
-        recommendedFor: "All skin types",
+        // recommendedFor: "All skin types",
         price: "500",
     },
 ]

@@ -108,7 +108,7 @@ const AddEditOurServices = () => {
                             </div>
 
                             <div className="flex flex-wrap items-start -mx-1.5 xl:-mx-2.5 2xl:-mx-3.5">
-                                <div className="w-full md:w-1/3 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
+                                <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
                                     <label className="label">Category Name <span className='text-red '>*</span></label>
                                     {/* <Field type="text" className="input" name="name" placeholder="Enter Category Name" /> */}
                                     <CustomDropdown
@@ -128,13 +128,13 @@ const AddEditOurServices = () => {
 
 
 
-                                <div className="w-full md:w-1/3 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
+                                <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
                                     <label className="label">Service Name <span className='text-red '>*</span></label>
                                     <Field type="text" className="input" name="service" placeholder="Enter Client Type" />
                                     <ErrorMessage name="service" component="span" className="error" />
                                 </div>
 
-                                <div className="w-full md:w-1/3 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
+                                <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
                                     <label className="label">Duration <span className='text-red '>*</span></label>
                                     <Field type="text" className="input" name="duration" placeholder="Enter Duration" />
                                     <ErrorMessage name="duration" component="span" className="error" />
@@ -142,11 +142,11 @@ const AddEditOurServices = () => {
 
 
 
-                                <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
+                                {/* <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
                                     <label className="label">Recommended For <span className='text-red '>*</span></label>
                                     <Field type="text" className="input" name="recommendedfor" placeholder="Enter Recommended For" />
                                     <ErrorMessage name="recommendedfor" component="span" className="error" />
-                                </div>
+                                </div> */}
 
 
                                 <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">

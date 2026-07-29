@@ -13,7 +13,7 @@ export const galleryData = [
     image:
       "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=80",
     type: "Image",
-    tag: "Hair Styling"
+    tag: "Hair"
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const galleryData = [
     image:
       "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80",
     type: "Image",
-    tag: "Facial"
+    tag: "Skin"
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const galleryData = [
     image:
       "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
     type: "Image",
-    tag: "Nail Art"
+    tag: "Nails"
   },
   {
     id: 5,
@@ -45,5 +45,6 @@ export const galleryData = [
     image:
       "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
     type: "Image",
+    tag: "Mehendi"
   },
 ];

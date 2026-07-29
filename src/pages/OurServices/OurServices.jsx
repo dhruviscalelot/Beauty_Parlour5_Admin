@@ -39,7 +39,7 @@ const OurServices = () => {
     { key: "service", label: "Service Name", className: "w-[200px]", renderCell: (key, row) => row?.service || "-" },
     { key: "description", label: "Description", className: "w-[200px]", renderCell: (key, row) => row?.description || "-" },
     { key: "duration", label: "Duration", className: "w-[200px]", renderCell: (key, row) => row?.duration || "-" },
-    { key: "recommendedFor", label: "Recommended For", className: "w-[200px]", renderCell: (key, row) => row?.recommendedFor || "-" },
+    // { key: "recommendedFor", label: "Recommended For", className: "w-[200px]", renderCell: (key, row) => row?.recommendedFor || "-" },
     { key: "price", label: "Price", className: "w-[200px]", renderCell: (key, row) => row?.price || "-" },
     {
       key: "status",

@@ -65,6 +65,10 @@ const AddEditGallery = ({ Data, onClose }) => {
         setSubmitting(false)
     }
 
+
+
+    
+
     return (
         <div className="fixed inset-0 w-full h-screen bg-g1/30 backdrop-blur-sm z-50 flex overflow-y-auto" onClick={() => onClose(false)}>
             <div className="w-full h-fit py-12 px-5 flex">
@@ -81,16 +85,15 @@ const AddEditGallery = ({ Data, onClose }) => {
                                 <div className="w-full relative">
                                     <label className="label">Tag <span className='text-red '>*</span></label>
                                     {/* <Field type="text" className="input" name="tag" placeholder="Enter Tag" /> */}
-
-                                    <CustomDropdown
+                                     <CustomDropdown
                                         value={values.tag}
                                         name="tag"
-                                        placeholder="Select Category"
+                                        placeholder="Select Taf"
                                         options={galleryTag}
                                         onType={(val) => setFieldValue("tag", val)}
                                         onSelect={(val) => setFieldValue("tag", val.value)}
                                         onTouched={() =>
-                                            setFieldValue("tag", values.category.trim())
+                                            setFieldValue("tag", values.tag.trim())
                                         }
                                     />
                                     <ErrorMessage name="tag" component="span" className="error -bottom-2" />

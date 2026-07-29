@@ -2,27 +2,27 @@
 export const packagesData = [
     {
         id: 1,
-        title: "Bridal Package",
-        price: "19,999",
+        title: "Engagement Glow",
+        price: "₹18,000",
         hours:"2 hrs",
         packageDetails: [
             {
                 id: 1,
-                packageName: "Basic Haircut",
+                packageName: "HD makeup",
 
             },
             {
                 id: 2,
-                packageName: "Hair Coloring",
+                packageName: "Hair styling",
             },
             {
                 id: 3,
-                packageName: "Hair Treatment",
+                packageName: "Draping",
 
             },
             {
                 id: 4,
-                packageName: "Bridal Styling",
+                packageName: "Trial session",
 
             },
         ],
