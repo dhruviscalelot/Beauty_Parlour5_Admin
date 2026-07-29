@@ -28,7 +28,7 @@ function Header() {
     return (
         <>
             <header
-                className={`h-[70px] bg-white z-40 flex items-center justify-between px-4 md:px-8 transition-all duration-300 ease-in-out`}
+                className={`h-[70px] bg-[#FEF8F3] z-40 flex items-center justify-between px-4 md:px-8 transition-all duration-300 ease-in-out`}
             >
                 {/* left side - toggle button & title */}
                 <div className="flex items-center space-x-3 md:space-x-4 flex-1">

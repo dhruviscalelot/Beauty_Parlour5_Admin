@@ -4,7 +4,8 @@ export const blogData = [
         image: "https://images.unsplash.com/photo-1745434159123-5b99b94206ca?auto=format&fit=crop&w=500&h=500&q=80",
         category: "Hair Care",
         mainSubtitle: "5 Hair Care Tips During Monsoon",
-        date : "12 June 2025",
+        date: "12 June 2025",
+        createdByName: "By Priya Malhotra",
         description:
             "From precision cuts to nourishing spa rituals, our hair experts restore shine, health and movement to every strand.",
     },
@@ -12,7 +13,8 @@ export const blogData = [
         id: 2,
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&h=500&q=80",
         category: "Nail Care",
-        date : "12 June 2025",
+        date: "12 June 2025",
+        createdByName: "By Priya Malhotra",
         mainSubtitle: "Nail Services",
         description:
             "Pamper your hands and feet with luxurious manicures, pedicures, nail art and long-lasting gel nail treatments.",
@@ -21,8 +23,9 @@ export const blogData = [
         id: 3,
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&h=500&q=80",
         category: "Skin Care",
-        date : "12 June 2025",
+        date: "12 June 2025",
         mainSubtitle: "Facial & Skin Treatments",
+        createdByName: "Anaya Kapoor",
         description:
             "Revitalize your skin with advanced facials, cleanup treatments, brightening therapies and anti-aging skincare solutions.",
     },
@@ -30,8 +33,9 @@ export const blogData = [
         id: 4,
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&h=500&q=80",
         category: "Makeup",
-        date : "12 June 2025",
+        date: "12 June 2025",
         mainSubtitle: "Professional Makeup Services",
+        createdByName: "By Priya Malhotra",
         description:
             "Enhance your beauty with flawless party, bridal and occasion makeup tailored to your skin tone and personal style.",
     },
@@ -40,6 +44,7 @@ export const blogData = [
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&h=500&q=80",
         category: "Waxing & Threading",
         mainSubtitle: "Beauty Essentials",
+        createdByName: "By Priya Malhotra",
         description:
             "Enjoy smooth, clean skin with professional waxing and threading services performed with premium hygiene and gentle care.",
     },

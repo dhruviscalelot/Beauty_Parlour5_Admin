@@ -21,6 +21,7 @@ const Blog = () => {
         { key: "category", label: "Category Name", renderCell: (key, row) => row?.category || "-" },
         { key: "description", label: "Description", renderCell: (key, row) => <div className="max-w-xs truncate">{row?.description || "-"}</div> },
         { key: "mainSubtitle", label: "Title", renderCell: (key, row) => row?.mainSubtitle || "-" },
+        { key: "createdByName", label: "Created By", renderCell: (key, row) => row?.createdByName || "-" },
         { key: "date", label: "Date", renderCell: (key, row) => row?.date || "-" },
         {
             key: "image",

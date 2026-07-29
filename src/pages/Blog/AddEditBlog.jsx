@@ -22,6 +22,7 @@ const AddEditBlog = () => {
     const blogsData = blogData.find(
         (item) => String(item.id) === String(id)
     );
+    console.log("blog data-----",blogsData);
 
     //end static add now for the fetch the data edit time
 
@@ -35,6 +36,8 @@ const AddEditBlog = () => {
         description: blogsData?.description || "",
         mainSubtitle: blogsData?.mainSubtitle || "",
         image: blogsData?.image || "", type: "image",
+        createdByName: blogsData?.createdByName || "",
+        
         date: blogsData?.date || "",
     }
 
@@ -45,6 +48,7 @@ const AddEditBlog = () => {
         mainSubtitle: Yup.string().required(TITLE_VALIDATION),
         image: Yup.mixed().required(IMAGE_VALIDATION),
         date: Yup.mixed().required(DATE_VALIDATION),
+        createdByName: Yup.string().required(NAME_VALIDATION),
     })
 
     const handleImageUpload = (e, setFieldValue) => {
@@ -198,7 +202,7 @@ const AddEditBlog = () => {
 
 
 
-                                <div className="w-full p-1.5 xl:p-2.5 2xl:p-3.5 relative">
+                                <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
                                     <input
                                         type="file"
                                         ref={fileInputRef}
@@ -256,6 +260,13 @@ const AddEditBlog = () => {
                                             />
                                         </div>
                                     )}
+                                </div>
+
+
+                                <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
+                                    <label className="label">Created By<span className='text-red '>*</span></label>
+                                    <Field type="text" className="input" name="createdByName" placeholder="Enter Name" />
+                                    <ErrorMessage name="createdByName" component="span" className="error" />
                                 </div>
                             </div>
                         </Form>
