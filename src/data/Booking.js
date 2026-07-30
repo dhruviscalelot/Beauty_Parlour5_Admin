@@ -8,9 +8,10 @@ export const bookingData = [
         expertName: "Sana Qureshi",
         serviceName: "Bridal Makeup",
         Date: "27-07-2026",
-        // preferedTime : "11:30",
-        // message:
-        //     "I would like to book bridal makeup and hairstyling for my wedding. Please share the available packages and appointment details.",
+
+
+        preferedTime : "11:30",
+        message:"I would like to book bridal makeup and hairstyling for my wedding. Please share the available packages and appointment details.",
     },
     {
         id: 2,
@@ -20,8 +21,12 @@ export const bookingData = [
         expertName: "Sana Qureshi",
         serviceName: "Bridal Makeup",
         Date: "27-07-2026",
-        // preferedTime : "11:30",
-        // message:"I would like to book bridal makeup and hairstyling for my wedding. Please share the available packages and appointment details.",
+
+
+        price:"15000",
+        categoryname :"Bridal",
+        preferedTime : "11:30",
+        message:"I would like to book bridal makeup and hairstyling for my wedding. Please share the available packages and appointment details.",
     },
     {
         id: 3,
@@ -31,7 +36,11 @@ export const bookingData = [
         expertName: "Sana Qureshi",
         serviceName: "Bridal Makeup",
         Date: "27-07-2026",
-        // preferedTime : "11:30",
-        // message:"I would like to book bridal makeup and hairstyling for my wedding. Please share the available packages and appointment details.",
+
+
+        price:"27000",
+        categoryname :"Makeup",
+        preferedTime : "11:30",
+        message:"I would like to book bridal makeup and hairstyling for my wedding. Please share the available packages and appointment details.",
     },
 ]

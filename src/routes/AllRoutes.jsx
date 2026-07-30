@@ -23,6 +23,7 @@ import AddEditBlog from '../pages/Blog/AddEditBlog';
 import Membership from '../pages/Membership/Membership';
 import AddEditMembership from '../pages/Membership/AddEditMembership';
 import Booking from '../pages/Booking/Booking';
+import BookingDetails from '../pages/Booking/BookingDetails';
 
 const AllRoutes = () => {
     return (
@@ -91,7 +92,9 @@ const AllRoutes = () => {
                         <Route path='/membership/edit/:id' element={<AddEditMembership />} />
 
                         {/* Booking */}
+
                         <Route path='/booking' element={<Booking />} />
+                         <Route path='/booking/details/:id' element={<BookingDetails />} />
 
                     </Route>
                 </Route>
