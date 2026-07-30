@@ -22,12 +22,9 @@ const Booking = () => {
         { key: "serviceName", label: "Service Name" },
         { key: "Date", label: "Date" },
         {
-            key: "status", label: "Status",
-        },
-        {
 
             key: "action", label: "Action", renderCell: (key, row) => <div className="flex items-center space-x-2.5">
-                <span className="text-[18px] lg:text-[20px] xl:text-[24px cursor-pointer" onClick={() => navigate(`/booking/details/${row?.id}`)} ><Eye size={20} /></span>
+                <span className="text-[18px] lg:text-[20px] xl:text-[24px] cursor-pointer" onClick={() => navigate(`/booking/details/${row?.id}`)} ><Eye size={20} /></span>
                 <span className="text-[18px] lg:text-[20px] xl:text-[24px] text-red cursor-pointer" onClick={() => DeleteOpenDialog(row)} ><Trash2 size={18} /></span>
             </div>
         }
