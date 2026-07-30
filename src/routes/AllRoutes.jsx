@@ -22,6 +22,7 @@ import Blog from "../pages/Blog/Blog";
 import AddEditBlog from '../pages/Blog/AddEditBlog';
 import Membership from '../pages/Membership/Membership';
 import AddEditMembership from '../pages/Membership/AddEditMembership';
+import Booking from '../pages/Booking/Booking';
 
 const AllRoutes = () => {
     return (
@@ -88,6 +89,9 @@ const AllRoutes = () => {
                         <Route path='/membership' element={<Membership />} />
                         <Route path='/membership/create' element={<AddEditMembership />} />
                         <Route path='/membership/edit/:id' element={<AddEditMembership />} />
+
+                        {/* Booking */}
+                        <Route path='/booking' element={<Booking />} />
 
                     </Route>
                 </Route>

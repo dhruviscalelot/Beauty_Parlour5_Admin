@@ -1,4 +1,4 @@
-import { CalendarDays, ClipboardList, LayoutDashboard, Scissors, Settings, Sparkles, Users, Images, Star, Gift, Gem, Layers3, Newspaper, Crown } from 'lucide-react'
+import { CalendarDays, ClipboardList, LayoutDashboard, Scissors, Settings, Sparkles, Users, Images, Star, Gift, Gem, Layers3, Newspaper, Crown, CalendarCheck } from 'lucide-react'
 
 export const MainMenu = [
     {
@@ -92,13 +92,13 @@ export const MainMenu = [
         view: true,
         icon: Crown,
     },
-    // {
-    //     displayname: "Settings",
-    //     route: "/settings",
-    //     isOpen: false,
-    //     view: true,
-    //     icon: Users,
-    // },
+    {
+        displayname: "Booking",
+        route: "/booking",
+        isOpen: false,
+        view: true,
+        icon:  CalendarCheck,
+    },
 ]
 
 
