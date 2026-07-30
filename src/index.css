@@ -68,7 +68,7 @@ body {
 }
 
 .sidebar_menu {
-  @apply flex-1 px-3.5 2xl:px-4 py-5 overflow-y-auto bg-primary;
+  @apply flex-1 px-3.5 2xl:px-4 py-5 overflow-y-auto bg-primary space-y-1.5 2xl:space-y-2;
 }
 
 .sidebar_link {
