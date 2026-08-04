@@ -84,7 +84,6 @@ const AddEditGallery = ({ Data, onClose }) => {
 
                                 <div className="w-full relative">
                                     <label className="label">Tag <span className='text-red '>*</span></label>
-                                    {/* <Field type="text" className="input" name="tag" placeholder="Enter Tag" /> */}
                                      <CustomDropdown
                                         value={values.tag}
                                         name="tag"
@@ -135,11 +134,6 @@ const AddEditGallery = ({ Data, onClose }) => {
                                     </div>
                                     <ErrorMessage name="image" component="span" className="error -bottom-2" />
                                 </div>
-
-
-
-
-
 
                                 <div className='flex items-center justify-center space-x-3 pt-4'>
                                     <button type='submit' className='btn_primary w-auto py-2' disabled={isSubmitting}>

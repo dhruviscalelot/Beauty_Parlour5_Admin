@@ -13,13 +13,12 @@ const AddEditCategory = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const { id } = useParams()
+
   //start static add now for the fetch the data edit time
-  // const { serviceData } = location.state || {}
   const serviceData = categoryData.find(
     (item) => String(item.id) === String(id)
   );
 
-  // const ExistingIcon = serviceData?.icon;
   //end static add now for the fetch the data edit time
 
   const fileInputRef = React.useRef(null)
@@ -165,22 +164,6 @@ const AddEditCategory = () => {
                     )}
                   </div>
                   <ErrorMessage name="image" component="span" className="error" />
-                  {/* 
-                                    {values.image && (
-                                        <div className="mt-4">
-                                            <p className="text-12 text-g7 mb-2">Preview:</p>
-                                            <img
-                                                // src={values.icon instanceof File ? URL.createObjectURL(values.icon) : import.meta.env.VITE_API_URL + values.icon}
-                                                src={
-                                                    values.image instanceof File
-                                                        ? URL.createObjectURL(values.image)
-                                                        : values.image
-                                                }
-                                                alt="Preview"
-                                                className="w-32 h-32 object-cover rounded-lg border border-l2 shadow-sm"
-                                            />
-                                        </div>
-                                    )} */}
                   {values.image && (
                     <div className="mt-4">
                       <p className="text-12 text-g7 mb-2">Preview:</p>
@@ -206,11 +189,6 @@ const AddEditCategory = () => {
 
 
               </div>
-
-
-
-
-
 
             </Form>
           }

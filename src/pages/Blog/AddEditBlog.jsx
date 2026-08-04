@@ -9,6 +9,7 @@ import { ImagePlus, Eye, Trash2 } from "lucide-react";
 import { blogData } from '../../data/blog';
 import { Calendar } from "primereact/calendar";
 import CustomDropdown from '../../components/UI/CustomDropdown'
+import { Dropdown } from 'primereact/dropdown'
 
 const AddEditBlog = () => {
     const dispatch = useDispatch()
@@ -18,12 +19,10 @@ const AddEditBlog = () => {
 
 
     //start static add now for the fetch the data edit time
-    // const { serviceData } = location.state || {}
     const blogsData = blogData.find(
         (item) => String(item.id) === String(id)
     );
-    console.log("blog data-----",blogsData);
-
+    console.log("blog data-----", blogsData);
     //end static add now for the fetch the data edit time
 
     const fileInputRef = React.useRef(null)
@@ -31,18 +30,16 @@ const AddEditBlog = () => {
 
 
     const initialValues = {
-        // name: blogsData?.name || "",
         category: blogsData?.category || "",
         description: blogsData?.description || "",
         mainSubtitle: blogsData?.mainSubtitle || "",
         image: blogsData?.image || "", type: "image",
         createdByName: blogsData?.createdByName || "",
-        
+
         date: blogsData?.date || "",
     }
 
     const HandleValidation = Yup.object().shape({
-        // name: Yup.mixed().required(NAME_VALIDATION),
         category: Yup.mixed().required(CATEGOTY_VALIDATION),
         description: Yup.string().required(DESCRIPTION_VALIDATION),
         mainSubtitle: Yup.string().required(TITLE_VALIDATION),
@@ -146,8 +143,7 @@ const AddEditBlog = () => {
                             <div className="flex flex-wrap items-start -mx-1.5 xl:-mx-2.5 2xl:-mx-3.5">
                                 <div className="w-full md:w-1/3 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
                                     <label className="label">Category Name <span className='text-red '>*</span></label>
-                                    {/* <Field type="text" className="input" name="category" placeholder="Enter Category Name" /> */}
-                                    <CustomDropdown
+                                    {/* <CustomDropdown
                                         value={values.category}
                                         name="category"
                                         placeholder="Select Category"
@@ -157,6 +153,14 @@ const AddEditBlog = () => {
                                         onTouched={() =>
                                             setFieldValue("category", values.category.trim())
                                         }
+                                    /> */}
+                                    <Dropdown
+                                        value={values.category}
+                                        name="category"
+                                        placeholder='Select Category'
+                                        options={options}
+                                        onChange={(e) => setFieldValue("category", e.target.value)}
+                                        className='w-full flex input h-10'
                                     />
                                     <ErrorMessage name="category" component="span" className="error" />
                                 </div>

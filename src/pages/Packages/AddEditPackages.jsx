@@ -96,17 +96,7 @@ const AddEditPackages = () => {
                                     <Field type="text" className="input" name="price" placeholder="Enter Price" />
                                     <ErrorMessage name="price" component="span" className="error" />
                                 </div>
-
-
-                                
-                                {/* <div className="w-full md:w-1/3 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
-                                    <label className="label">Hours <span className='text-red '>*</span></label>
-                                    <Field type="text" className="input" name="hours" placeholder="Enter Hours" />
-                                    <ErrorMessage name="hours" component="span" className="error" />
-                                </div> */}
                             </div>
-
-
 
 
 

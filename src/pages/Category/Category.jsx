@@ -29,25 +29,10 @@ const Category = () => {
           "-"
         ),
     },
-    // {
-    //   key: "icon", label: "Icon", renderCell: (key, row) => {
-    //     const IconComponent = row?.icon;
-    //     return IconComponent
-    //       ? <span className="flex items-center justify-center w-[40px] h-[40px] rounded-lg bg-primary/10">
-    //         <IconComponent size={22} className="text-primary" />
-    //       </span>
-    //       : "-";
-    //   }
-    // },
     { key: "category", label: "Category", className: "w-[200px]", renderCell: (key, row) => row?.category || "-" },
     { key: "mainSubtitle", label: "Sub Title", className: "w-[200px]", renderCell: (key, row) => row?.mainSubtitle || "-" },
     { key: "description", label: "Description", className: "w-[200px]", renderCell: (key, row) => row?.description || "-" },
-    // { key: "description", label: "Description", renderCell: (key, row) => <div className="max-w-xs truncate">{row?.description || "-"}</div> },
-    // { key: "price", label: "Price", renderCell: (key, row) => row?.serviceDetails?.[0]?.price || "-" },
-  
-
-
-   
+    
     {
       key: "action", label: "Action", renderCell: (key, row) => <div className="flex items-center space-x-3">
         <span className="text-[18px] lg:text-[20px] xl:text-[24px] text-g1 cursor-pointer" onClick={() => navigate(`./edit/${row.id}`,)} ><Pencil size={18} /></span>

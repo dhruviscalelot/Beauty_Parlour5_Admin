@@ -12,13 +12,12 @@ const AddEditMembership = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const { id } = useParams()
+    
     //start static add now for the fetch the data edit time
-    // const { serviceData } = location.state || {}
     const serviceData = packagesData.find(
         (item) => String(item.id) === String(id)
     );
 
-    const ExistingIcon = serviceData?.icon;
     //end static add now for the fetch the data edit time
 
     const fileInputRef = React.useRef(null)

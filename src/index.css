@@ -217,5 +217,32 @@ body {
 
 /* prime react input switch css end */
 
+
+/* start css prime react dropdown */
+/* Dropdown container */
+.p-dropdown {
+    height: 44px;
+    border-radius: 10px;
+}
+
+/* Selected value */
+.p-dropdown .p-dropdown-label {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 12px;
+    line-height: normal !important;
+}
+
+/* Dropdown trigger */
+.p-dropdown .p-dropdown-trigger {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* end css prime react dropdown */
+
 @tailwind components;
 @tailwind utilities;

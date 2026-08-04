@@ -7,6 +7,9 @@ import { servicesData } from '../../data/service.js';
 import { Pencil, Trash2, Search, Plus } from "lucide-react";
 import CommonDialog from '../../common/CommonDialog.jsx';
 import { InputSwitch } from 'primereact/inputswitch';
+import CustomDropdown from '../../components/UI/CustomDropdown.jsx';
+import { Dropdown } from 'primereact/dropdown';
+
 
 const OurServices = () => {
   const dispatch = useDispatch();
@@ -14,6 +17,15 @@ const OurServices = () => {
   const [DeletePopup, setDeletePopup] = useState({ isOpen: false, resData: {}, });
   const [commonData, setCommonData] = useState({});
   const [checked, setChecked] = useState({});
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [serviceName, setServiceName] = useState("");
+
+  const categoryOptions = [
+    { label: "Hair Care", value: "Hair Care" },
+    { label: "Skin Care", value: "Skin Care" },
+    { label: "Make Up", value: "Make Up" },
+    { label: "Nail Care", value: "Nail Care" },
+  ];
 
 
   const handleStatusChange = (id, value) => {
@@ -24,22 +36,10 @@ const OurServices = () => {
   };
 
   const columns = [
-
-    // {
-    //   key: "icon", label: "Icon", renderCell: (key, row) => {
-    //     const IconComponent = row?.icon;
-    //     return IconComponent
-    //       ? <span className="flex items-center justify-center w-[40px] h-[40px] rounded-lg bg-primary/10">
-    //         <IconComponent size={22} className="text-primary" />
-    //       </span>
-    //       : "-";
-    //   }
-    // },
     { key: "category", label: "Category Name", className: "w-[200px]", renderCell: (key, row) => row?.category || "-" },
     { key: "service", label: "Service Name", className: "w-[200px]", renderCell: (key, row) => row?.service || "-" },
     { key: "description", label: "Description", className: "w-[200px]", renderCell: (key, row) => row?.description || "-" },
     { key: "duration", label: "Duration", className: "w-[200px]", renderCell: (key, row) => row?.duration || "-" },
-    // { key: "recommendedFor", label: "Recommended For", className: "w-[200px]", renderCell: (key, row) => row?.recommendedFor || "-" },
     { key: "price", label: "Price", className: "w-[200px]", renderCell: (key, row) => row?.price || "-" },
     {
       key: "status",
@@ -69,8 +69,19 @@ const OurServices = () => {
   const [pagination, setPagination] = useState({ page: 1, limit: 10 });
 
 
-  // Slice static data for current page
-  const paginatedData = servicesData.slice(
+  // Filter data by category and service name
+  const filteredData = servicesData.filter((item) => {
+    const matchCategory = selectedCategory
+      ? item.category?.toLowerCase() === selectedCategory.toLowerCase()
+      : true;
+    const matchService = serviceName
+      ? item.service?.toLowerCase().includes(serviceName.toLowerCase())
+      : true;
+    return matchCategory && matchService;
+  });
+
+  // Slice filtered data for current page
+  const paginatedData = filteredData.slice(
     (pagination.page - 1) * pagination.limit,
     pagination.page * pagination.limit
   );
@@ -135,12 +146,45 @@ const OurServices = () => {
           </Link>
         </div>
 
-        <div className='flex flex-wrap items-center -mx-1.5 lg:-mx-2 2xl:-mx-3'>
-          <div className='w-full xs:w-1/2 md:w-1/3 2xl:w-[358px] p-1.5 lg:p-2 2xl:p-3'>
-            <div className="input w-full max-w-full flex items-center">
-              <span className='text-g7 block text-[18px] xl:text-[20px] cursor-pointer'><Search size={20} /></span>
-              <input type="text" placeholder='Search' className='w-full outline-none bg-transparent text-d3 pl-2.5 text-g1' />
-            </div>
+        <div className='flex flex-wrap items-center gap-6'>
+          {/* category dropdown */}
+          <div className='w-full xs:w-auto relative'>
+            <Dropdown
+              value={selectedCategory}
+              name="category"
+              placeholder="Select Categories"
+              options={categoryOptions}
+              onChange={(e) => {
+                setSelectedCategory(e.value);
+                setPagination((prev) => ({ ...prev, page: 1 }));
+              }}
+              className='w-full flex input h-10'
+            // showClear
+            />
+          </div>
+
+          {/* service name search */}
+          <div className="input w-full xs:w-auto flex items-center min-w-[220px]">
+            <span className='text-g7 block text-[18px] xl:text-[20px] cursor-pointer'><Search size={20} /></span>
+            <input
+              type="text"
+              value={serviceName}
+              onChange={(e) => setServiceName(e.target.value)}
+              placeholder='Search Service Name'
+              className='w-full outline-none bg-transparent text-d3 pl-2.5 text-g1'
+            />
+          </div>
+
+          <div className='w-full md:w-auto'>
+            <button
+              className='btn_secondary w-full'
+              onClick={() => {
+                setSelectedCategory("");
+                setServiceName("");
+              }}
+            >
+              <span>Clear All</span>
+            </button>
           </div>
         </div>
 
@@ -148,7 +192,7 @@ const OurServices = () => {
           columns={columns}
           data={paginatedData}
           isPagination={true}
-          totalRecords={servicesData.length}
+          totalRecords={filteredData.length}
           pagination={pagination}
           handlePageChange={handlePageChange}
         />

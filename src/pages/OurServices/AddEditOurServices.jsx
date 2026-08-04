@@ -8,6 +8,7 @@ import { SERVICE_VALIDATION, DESCRIPTION_VALIDATION, CATEGOTY_VALIDATION, PRICE_
 import { ImagePlus } from "lucide-react";
 import { servicesData } from '../../data/service.js';
 import CustomDropdown from '../../components/UI/CustomDropdown.jsx'
+import { Dropdown } from 'primereact/dropdown'
 
 
 const AddEditOurServices = () => {
@@ -15,18 +16,12 @@ const AddEditOurServices = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const { id } = useParams()
+
     //start static add now for the fetch the data edit time
-    // const { serviceData } = location.state || {}
     const serviceData = servicesData.find(
         (item) => String(item.id) === String(id)
     );
-
-    // const ExistingIcon = serviceData?.icon;
     //end static add now for the fetch the data edit time
-
-    const fileInputRef = React.useRef(null)
-
-
 
     const initialValues = {
         service_id: serviceData?.id || "",
@@ -37,8 +32,6 @@ const AddEditOurServices = () => {
         recommendedfor: serviceData?.recommendedFor || "",
         price: serviceData?.price || "",
         description: serviceData?.description || "",
-
-
     }
 
     const HandleValidation = Yup.object().shape({
@@ -49,14 +42,6 @@ const AddEditOurServices = () => {
         recommendedfor: Yup.string().required(RECOMMENDEDFOR_VALIDATION),
         price: Yup.string().required(PRICE_VALIDATION),
         description: Yup.string().required(DESCRIPTION_VALIDATION),
-        // serviceDetails: Yup.array().of(
-        //     Yup.object().shape({
-        //         subtitle: Yup.string().required("Suitable Title is Required"),
-        //         subtitle1: Yup.string().required("Description is Required"),
-        //         price: Yup.string().required("Price is required"),
-        //         minute: Yup.string().required("Minute is required"),
-        //     })
-        // )
     })
 
 
@@ -110,8 +95,7 @@ const AddEditOurServices = () => {
                             <div className="flex flex-wrap items-start -mx-1.5 xl:-mx-2.5 2xl:-mx-3.5">
                                 <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
                                     <label className="label">Category Name <span className='text-red '>*</span></label>
-                                    {/* <Field type="text" className="input" name="name" placeholder="Enter Category Name" /> */}
-                                    <CustomDropdown
+                                    {/* <CustomDropdown
                                         value={values.category}
                                         name="category"
                                         placeholder="Select Category"
@@ -121,6 +105,14 @@ const AddEditOurServices = () => {
                                         onTouched={() =>
                                             setFieldValue("category", values.category.trim())
                                         }
+                                    /> */}
+                                    <Dropdown
+                                        value={values.category}
+                                        name="category"
+                                        placeholder='Select Category'
+                                        options={options}
+                                        onChange={(e) => setFieldValue("category", e.target.value)}
+                                        className='w-full flex input h-10'
                                     />
                                     <ErrorMessage name="category" component="span" className="error" />
                                 </div>
@@ -140,15 +132,6 @@ const AddEditOurServices = () => {
                                     <ErrorMessage name="duration" component="span" className="error" />
                                 </div>
 
-
-
-                                {/* <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
-                                    <label className="label">Recommended For <span className='text-red '>*</span></label>
-                                    <Field type="text" className="input" name="recommendedfor" placeholder="Enter Recommended For" />
-                                    <ErrorMessage name="recommendedfor" component="span" className="error" />
-                                </div> */}
-
-
                                 <div className="w-full md:w-1/2 p-1.5 xl:p-2.5 2xl:p-3.5 relative">
                                     <label className="label">Price <span className='text-red '>*</span></label>
                                     <Field type="text" className="input" name="price" placeholder="Enter Price" />
@@ -162,9 +145,6 @@ const AddEditOurServices = () => {
                                     <Field as="textarea" name="description" className="input h-[130px] py-3" placeholder="Enter Description" />
                                     <ErrorMessage name="description" component="span" className="error" />
                                 </div>
-
-
-
 
                             </div>
                         </Form>

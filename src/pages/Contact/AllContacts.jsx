@@ -16,11 +16,7 @@ const AllContacts = () => {
         { key: "fullName", label: "Name" },
         { key: "email", label: "Email" },
         { key: "phoneNumber", label: "Mobile" },
-        // { key : "preferedContact", label: "Prefered Contact"},
-        // { key: "preferedDate", label: "Prefered Date" },
-        // { key: "preferedTime", label: "Prefered Time" },
         { key: "message", label: "Message" },
-        // { key: "serviceName", label: "Service Name" },
         {
             key: "action", label: "Action", renderCell: (key, row) => <div className="flex items-center space-x-2.5">
                 <span className="icon-trash text-[18px] lg:text-[20px] xl:text-[24px] text-red cursor-pointer" onClick={() => DeleteOpenDialog(row)} ><Trash2 size={18} /></span>
