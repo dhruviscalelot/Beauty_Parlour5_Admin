@@ -8,33 +8,20 @@ export const MainMenu = [
         view: true,
         icon: CalendarDays,
     },
-    // {
-    //     displayname: "Inquiry",
-    //     route: "/inquiry",
-    //     isOpen: false,
-    //     view: true,
-    //     icon: ClipboardList,
-    // },
-    // {
-    //     displayname: "Appointments",
-    //     route: "/appointments",
-    //     isOpen: false,
-    //     view: true,
-    //     icon: LayoutDashboard
-    // },
     {
         displayname: "Category",
         route: "/category",
         isOpen: false,
         view: true,
         icon: Layers3,
-    },
-    {
-        displayname: "Our Services",
-        route: "/our-services",
-        isOpen: false,
-        view: true,
-        icon: Scissors,
+        children: [
+            {
+                displayname: "Our Services",
+                route: "/our-services",
+                view: true,
+                icon: Scissors,
+            }
+        ]
     },
     {
         displayname: "Our Experts",

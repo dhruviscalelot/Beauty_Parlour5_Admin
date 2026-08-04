@@ -1,17 +1,50 @@
-import { NavLink } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useToggleSideBar, useToggleSideBarMobile } from '../Store/Selectors/Sidebar/Sidebar_Selectors'
 import { setSidebarOpenMobile } from '../Store/Action/Sidebar/Sidebar_Action'
-import { ChevronLeft } from 'lucide-react'
+import { ChevronLeft, ChevronDown, ChevronUp } from 'lucide-react'
 
 function Sidebar({ MainMenu = [] }) {
     const dispatch = useDispatch()
+    const location = useLocation()
+    const navigate = useNavigate()
 
     // Redux state
     const isExpanded = useToggleSideBar()      // desktop: true = expanded, false = collapsed
     const isOpenMobile = useToggleSideBarMobile() // mobile: true = open, false = hidden
 
     const menuList = [...MainMenu]
+
+    // Track open submenus by displayname
+    const [openSubmenus, setOpenSubmenus] = useState({})
+
+    // Auto-expand parent menu if current location matches any child route or parent route
+    useEffect(() => {
+        const initialOpenState = {}
+        menuList.forEach((item) => {
+            if (item.children && item.children.length > 0) {
+                const isChildActive = item.children.some(child => 
+                    location.pathname === child.route || (child.route !== '/' && location.pathname.startsWith(child.route))
+                )
+                const isParentActive = location.pathname === item.route || (item.route !== '/' && location.pathname.startsWith(item.route))
+                if (isChildActive || isParentActive) {
+                    initialOpenState[item.displayname] = true
+                }
+            }
+        })
+        setOpenSubmenus(initialOpenState)
+    }, [location.pathname])
+
+    const toggleSubmenu = (displayname, e) => {
+        if (e && e.stopPropagation) {
+            e.stopPropagation()
+        }
+        setOpenSubmenus(prev => ({
+            ...prev,
+            [displayname]: !prev[displayname]
+        }))
+    }
 
     return (
         <>
@@ -42,12 +75,66 @@ function Sidebar({ MainMenu = [] }) {
                     </div>
                     <div className="sidebar_logo_text ml-3">
                         <h2 className="font-Prata text-16 2xl:text-20 text-l3 leading-tight">Luxe Salon & Spa</h2>
-                        {/* <p className="text-12 text-g7 uppercase tracking-[0.16em]">Admin Panel</p> */}
                     </div>
                 </div>
 
                 <nav className="sidebar_menu">
                     {menuList.filter((item) => item.view).map((item) => {
+                        const hasChildren = item.children && item.children.length > 0
+                        const isSubmenuOpen = !!openSubmenus[item.displayname]
+
+                        if (hasChildren) {
+                            const isParentActive = location.pathname === item.route || 
+                                (item.route !== '/' && location.pathname.startsWith(item.route)) ||
+                                item.children.some(child => location.pathname === child.route || (child.route !== '/' && location.pathname.startsWith(child.route)))
+
+                            return (
+                                <div key={item.displayname} className="w-full space-y-1">
+                                    <div
+                                        onClick={() => {
+                                            toggleSubmenu(item.displayname)
+                                            if (item.route) {
+                                                navigate(item.route)
+                                            }
+                                        }}
+                                        className={`sidebar_link cursor-pointer justify-between ${isParentActive ? 'sidebar_link_active' : ''}`}
+                                    >
+                                        <div className="flex items-center">
+                                            <span className="sidebar_icon">
+                                                <item.icon size={18} />
+                                            </span>
+                                            <span className="sidebar_text">{item.displayname}</span>
+                                        </div>
+                                        <span 
+                                            className="sidebar_text ml-auto p-1 cursor-pointer"
+                                            onClick={(e) => {
+                                                e.stopPropagation()
+                                                toggleSubmenu(item.displayname, e)
+                                            }}
+                                        >
+                                            {isSubmenuOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                                        </span>
+                                    </div>
+
+                                    {/* Submenu List */}
+                                    {isSubmenuOpen && (
+                                        <div className="space-y-1 py-0.5">
+                                            {item.children.filter(child => child.view).map((child) => (
+                                                <NavLink
+                                                    key={child.displayname}
+                                                    to={child.route}
+                                                    onClick={() => dispatch(setSidebarOpenMobile(false))}
+                                                    className={({ isActive }) => `sidebar_sublink ${isActive ? 'sidebar_sublink_active' : ''}`}
+                                                >
+                                                    <span className="sidebar_text">{child.displayname}</span>
+                                                </NavLink>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            )
+                        }
+
                         return (
                             <NavLink
                                 key={item.displayname}
@@ -69,3 +156,5 @@ function Sidebar({ MainMenu = [] }) {
 }
 
 export default Sidebar
+
+

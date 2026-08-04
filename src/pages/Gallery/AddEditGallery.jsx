@@ -88,7 +88,7 @@ const AddEditGallery = ({ Data, onClose }) => {
                                      <CustomDropdown
                                         value={values.tag}
                                         name="tag"
-                                        placeholder="Select Taf"
+                                        placeholder="Select Tag"
                                         options={galleryTag}
                                         onType={(val) => setFieldValue("tag", val)}
                                         onSelect={(val) => setFieldValue("tag", val.value)}

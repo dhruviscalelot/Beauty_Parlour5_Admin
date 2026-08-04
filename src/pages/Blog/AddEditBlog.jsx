@@ -174,16 +174,16 @@ const AddEditBlog = () => {
                                     </label>
 
                                     <Calendar
-                                        id="pickup_date"
+                                        // id="pickup_date"
                                         name="date"
                                         value={values.date}
-                                        onChange={(e) => setFieldValue("pickup_date", e.value)}
+                                        onChange={(e) => setFieldValue("date", e.value)}
                                         minDate={new Date()}
                                         dateFormat="dd/mm/yy"
                                         placeholder="Select Date"
                                         showIcon
                                         iconPos="input"
-                                        showButtonBar
+                                        // showButtonBar
                                         className="w-full"
                                         inputClassName="input w-full"
                                     />

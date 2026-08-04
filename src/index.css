@@ -79,6 +79,14 @@ body {
   @apply bg-l3 text-primary;
 }
 
+.sidebar_sublink {
+  @apply w-full flex items-center py-2 2xl:py-2.5 px-3 pl-14 2xl:pl-16 rounded-lg text-14 2xl:text-16 font-medium text-l3/70 hover:text-l3 transition-colors;
+}
+
+.sidebar_sublink_active {
+  @apply text-l3 font-semibold;
+}
+
 .sidebar_icon {
   @apply w-9 h-9 rounded-lg flex items-center justify-center mr-3 bg-l3 text-primary;
 }
@@ -154,13 +162,10 @@ body {
 
 /* prime react date start */
 .p-calendar {
-  width: 100%;
   position: relative;
 }
 
 .p-calendar .p-inputtext {
-  width: 100%;
-  padding-right: 45px;
 }
 
 .p-calendar .p-datepicker-trigger {
@@ -177,22 +182,27 @@ body {
   z-index: 2;
 }
 
-.p-calendar .p-datepicker-trigger:hover {
-  background: transparent;
-}
-
-.p-calendar .p-datepicker-trigger:focus {
-  box-shadow: none;
+/* Calendar Panel - Width & Height */
+.p-datepicker {
+  width: 420px !important;
+  min-width: 420px !important;
+  padding: 8px !important;
+  /* border-radius: 12px !important; */
+  box-shadow: 0px 8px 32px rgba(12, 26, 36, 0.12) !important;
+  border: 1px solid #e5e7eb !important;
+  /* background: #ffffff !important; */
+  /* font-family: 'Lexend', sans-serif !important; */
 }
 
 /* prime react date end */
+
 
 
 /* prime react input switch css start */
 
 /* ON Background */
 .custom-switch .p-inputswitch.p-highlight .p-inputswitch-slider {
-  background: #D17273 !important;
+  background: #362320 !important;
 }
 
 /* Circle when ON */
