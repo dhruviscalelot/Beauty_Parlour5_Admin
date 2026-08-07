@@ -19,7 +19,7 @@ export const MainMenu = [
                 displayname: "Our Services",
                 route: "/our-services",
                 view: true,
-                icon: Scissors,
+                // icon: Scissors,
             }
         ]
     },

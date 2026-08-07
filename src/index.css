@@ -138,6 +138,11 @@ body {
   .sidebar_collapsed .sidebar_icon {
     @apply mr-0;
   }
+
+  /* Hide submenu children when sidebar is collapsed — removes the empty space */
+  .sidebar_collapsed .sidebar_sublink {
+    @apply hidden;
+  }
 }
 
 /* end sidebar and header class */
