@@ -109,7 +109,7 @@ const Membership = () => {
             <div className="bg-white rounded-xl lg:rounded-2xl main_shadow p-3 lg:p-4 xl:p-5 space-y-4 lg:space-y-6 xl:space-y-8">
 
                 <div className="flex items-center justify-between">
-                    <h6 className="text-14 font-semibold text-primary">Our Membership</h6>
+                    <h6 className="text-20 font-semibold text-primary">Our Membership</h6>
                     <Link to="./create" className='btn_primary w-auto '><Plus size={20} />
                         <span>Add New Membership</span>
                     </Link>
